@@ -1,0 +1,22 @@
+I AM CODING USING NOTEPAD
+
+WHY NOTEPAD?
+
+ VS CODE ILIJAM VILE WATOTO WALITUMIA LAPPY... I HAVE TO UPGARDE THE WINDOWS
+BUT I ALREADY HAVE THE PROJECT ON GITHUB
+
+What stack or tech?
+
+its just a normal like using html na css only to build a personal portfolio
+
+your entry page to home should be index.html
+ok, lemme change
+
+
+i am doing the right thing?
+
+push the code to github
+
+can i do it manually  without using the commdand prompt ok i thought you have an existing project?
+yeah, maybe unisaidie kuipush 
+kidogo nichange ingine hapa
