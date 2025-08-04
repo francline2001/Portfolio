@@ -1,35 +1,104 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Projects</title>
   <style>
-    body { font-family: 'Segoe UI'; background: #eef2f3; margin: 0; padding: 0; }
-    header, nav, footer { background: #222; color: white; text-align: center; padding: 1rem; }
-    .project { background: white; margin: 1rem auto; padding: 1rem; width: 80%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    h3 { color: #003366; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e7f2f8; /* same as contact & interest */
+      color: #222;
+    }
+
+    header, footer {
+      background-color: #004d66; /* same as contact & interest */
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    nav {
+      background-color: #004d66;
+      text-align: center;
+      padding: 0.8rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #b3ecf2;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .project {
+      background: white;
+      border-left: 5px solid #004d66;
+      margin: 1rem auto;
+      padding: 1.5rem;
+      width: 85%;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #003344;
+      margin-bottom: 0.5rem;
+    }
+
+    a.project-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: white;
+      background-color: #004d66;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    a.project-link:hover {
+      background-color: #007c99;
+    }
   </style>
 </head>
 <body>
-  <header><h1>Projects</h1></header>
+
+  <header>
+    <h1>Projects</h1>
+  </header>
+
   <nav>
     <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="contact.html">Contact</a>
   </nav>
   <main>
     <div class="project">
       <h2>Elevate Minds Network</h2>
-      <p>A global mental wellness platform.</p>
-      <p>The Elevate Minds Network System is a digital mental health platform designed to enhance access to counseling services,
- particularly for university students facing emotional, psychological, or academic challenges. Rooted in the understanding that many 
-students struggle silently due to stigma, lack of access, or time constraints, Elevate Minds offers a secure, student-centered environment where users can book, 
-schedule, and reschedule counseling sessions with professional therapists. The system integrates self-help tools, personalized wellness resources, 
-and data-driven feedback to promote emotional well-being and resilience. Developed through a collaborative, multidisciplinary effort—and supported by ethical, 
-legal, and intellectual property frameworks—it not only empowers students to seek help discreetly but also provides institutions with insights 
-to improve student support services. Ultimately, Elevate Minds envisions a connected network of students and counselors working together to foster a culture of 
-mental health awareness, support, and growth across campuses and beyond.<a href="https://elevateminds-ns.netlify.app/" target="_blank">SEE</a>
-</p>
+      <p>
+        The Elevate Minds Network System is a digital mental wellness platform created to support students silently battling emotional,
+        psychological, or academic challenges. Built with compassion and innovation, it enables secure booking, scheduling, and rescheduling
+        of counseling sessions with licensed professionals. Beyond appointments, it offers personalized wellness tools, discreet self-help
+        resources, and insights for institutions to better their student support systems. This project envisions a culture where every student
+        feels seen, heard, and empowered to heal and grow—on campus and beyond.
+      </p>
+      <a class="project-link" href="https://elevateminds-ns.netlify.app/" target="_blank">🌐 Visit Project</a>
     </div>
   </main>
-  <footer><p>&copy; 2025 @ScarpeliansDevs</p></footer>
+  <footer>
+    <p>&copy; 2025 @ScarpeliansDevs</p>
+  </footer>
+
 </body>
 </html>
