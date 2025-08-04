@@ -4,10 +4,76 @@
   <meta charset="UTF-8" />
   <title>Programming Skills</title>
   <style>
-    body { font-family: Verdana; background: #fdf6e3; margin: 0; padding: 0; }
-    header, nav, footer { background: #333; color: white; text-align: center; padding: 1rem; }
-    main { padding: 2rem; }
-    ul { list-style-type: square; padding-left: 20px; }
+    body {
+      font-family: Verdana, sans-serif;
+      background: #f4f8fb;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, nav, footer {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: #fcd34d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #374151;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background: white;
+      border-left: 6px solid #2563eb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .skill-name {
+      font-size: 1.1rem;
+      color: #1f2937;
+      font-weight: bold;
+    }
+
+    footer p {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -16,15 +82,28 @@
     <a href="index.html">Home</a>
   </nav>
   <main>
-<p>The following are some of the programming languages I have basic knowledge of. However, I am willing, eager, and 
-flexible to advance my skills further in each as 
-I grow professionally and explore new learning opportunities</p>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-    </ul>
+    <p>
+      The following are some of the programming languages I have basic knowledge of. However, I’m willing, eager, and flexible to advance in each as I grow professionally and explore new learning opportunities.
+    </p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/html5.svg" alt="HTML" />
+        <span class="skill-name">HTML</span>
+      </div>
+      <div class="skill-card">
+        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/css3.svg" alt="CSS" />
+        <span class="skill-name">CSS</span>
+      </div>
+      <div class="skill-card">
+        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/javascript.svg" alt="JavaScript" />
+        <span class="skill-name">JavaScript</span>
+      </div>
+      <div class="skill-card">
+        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/python.svg" alt="Python" />
+        <span class="skill-name">Python</span>
+      </div>
+    </div>
   </main>
   <footer><p>&copy; 2025 @ScarpeliansDevs</p></footer>
 </body>
