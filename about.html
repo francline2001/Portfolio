@@ -4,29 +4,86 @@
   <meta charset="UTF-8" />
   <title>About Me</title>
   <style>
-    body { font-family: Arial; margin: 0; padding: 0; background: #f1f1f1; }
-    header, nav, footer { background: #222; color: white; text-align: center; padding: 1rem; }
-    nav a { color: white; margin: 0 10px; text-decoration: none; }
-    main { padding: 2rem; }
+    body {
+      font-family: Tahoma;
+      background: #f4f8fb;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, nav, footer {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: #fcd34d;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    main {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 6px solid #2563eb;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .about-container h2 {
+      color: #1f2937;
+      margin-bottom: 1rem;
+    }
+
+    .about-container p {
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    footer p {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
-  <header><h1>About Me</h1></header>
+  <header>
+    <h1>About Me</h1>
+  </header>
+
   <nav>
     <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
   </nav>
+
   <main>
-    <p>I am a creative developer with a passion for building both the visual and functional sides of web applications. 
-I constantly explore new tech and strive to improve my skills.<br>@ScarpeliansDevs</p>
-<p> I am passionate and skilled technology professional with a background in Business Information Technology from Kabarak University. 
-With specialized training in ICT Security, Software Development, Networking, and Database Systems, i am driven by a mission to use technology 
-to improve service delivery—especially in critical sectors like healthcare and mental wellness. During my time at university, 
-he led the development of the Elevate Minds Network System, a web-based platform designed to provide accessible mental health support. 
-i also gained hands-on experience in the banking sector through an internship at Kenya Commercial Bank (KCB), 
-where i sharpened my skills in customer relationship management, documentation, digital services, and operations. 
-I combines technical expertise with strong interpersonal skills, integrity, and a proactive attitude. my leadership, adaptability, 
-and problem-solving mindset position ME as a valuable contributor to any forward-thinking team or organization seeking digital transformation and innovation.</p>
+    <div class="about-container">
+      <h2>Francline Omondi</h2>
+      <p>
+        I'm a passionate and purpose-driven individual with a strong interest in using technology to create real-world impact. My background in Business Information Technology, coupled with my creativity and leadership experience, fuels my desire to grow in the tech space and empower communities through innovation.
+      </p>
+      <p>
+        I'm passionate about creating meaningful software solutions that solve real-life problems, blending technology with empathy, purpose, and everyday impact.
+      </p>
+    </div>
   </main>
-  <footer><p>&copy; 2025 @ScarpeliansDevs</p></footer>
+
+  <footer>
+    <p>&copy; 2025 @ScarpeliansDev.</p>
+  </footer>
 </body>
 </html>
