@@ -4,33 +4,97 @@
   <meta charset="UTF-8" />
   <title>Education</title>
   <style>
-    body { font-family: sans-serif; background: #e7f2f8; margin: 0; padding: 0; }
-    header, nav, footer { background-color: #004080; color: white; text-align: center; padding: 1rem; }
-    main { padding: 2rem; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e7f2f8;
+      margin: 0;
+      padding: 0;
+      color: #002244;
+    }
+    header, nav, footer {
+      background-color: #003366; /* Updated theme color */
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem;
+      line-height: 1.8;
+    }
+    h2 {
+      color: #003366; /* Updated theme color */
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .education-block {
+      background: #fff;
+      border-left: 6px solid #003366; /* Updated theme color */
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #003366; /* Updated theme color */
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    .btn:hover {
+      background-color: #002244;
+    }
+    .emoji {
+      margin-right: 6px;
+    }
   </style>
 </head>
 <body>
-  <header><h1>Education</h1></header>
+  <header>
+    <h1>🎓 Education Journey</h1>
+  </header>
   <nav>
-    <a href="index.html">Home</a>
+    <a href="index.html">🏠 Home</a>
+    <a href="projects.html">🛠️ Projects</a>
+    <a href="skills.html">💻 Programming languages</a>
   </nav>
   <main>
-    <p>
-Bachelor of Business Information Technology<br>
-Kabarak University<br>
-September 2021 – Present<br>
-<br>
-Kenya Certificate of Secondary Education (KCSE)<br>
-Kowuor Mixed Secondary School<br>
-2016 – 2020<br>
-Grade: B+ (70 Points)<br>
-<br>
-Kenya Certificate of Primary Education (KCPE)<br>
-Kowuor Primary School<br>
-2007 – 2015<br>
-Score: 297 Marks</p><br>
-<a href="C:\Users\okumu\Downloads/FRANCLINE'S RESUME.pdf" download class="btn">Download My CV</a>
+    <div class="education-block">
+      <h2><span class="emoji">🎓</span>Bachelor of Business Information Technology</h2>
+      <p><strong>Kabarak University</strong><br>
+      September 2021 – Present</p>
+    </div>
+
+    <div class="education-block">
+      <h2><span class="emoji">🏫</span>KCSE – Kenya Certificate of Secondary Education</h2>
+      <p><strong>Kowuor Mixed Secondary School</strong><br>
+      2016 – 2020<br>
+      Grade: <strong>B+</strong> (70 Points)</p>
+    </div>
+
+    <div class="education-block">
+      <h2><span class="emoji">📘</span>KCPE – Kenya Certificate of Primary Education</h2>
+      <p><strong>Kowuor Primary School</strong><br>
+      2007 – 2015<br>
+      Score: <strong>297 Marks</strong></p>
+    </div>
+
+    <a href="C:/Users/okumu/Downloads/FRANCLINE'S RESUME.pdf" download class="btn">📄 Download My CV</a>
   </main>
-  <footer><p>&copy; 2025 @ScarpeliansDevs</p></footer>
+  <footer>
+    <p>&copy; 2025 <strong>@ScarpeliansDevs</strong> | Built with passion 💙</p>
+  </footer>
 </body>
 </html>
