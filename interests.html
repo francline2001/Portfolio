@@ -1,105 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>My Interests</title>
-  <style>
-    body {
-      font-family: 'Georgia', serif;
-      background: #f4f8fb;
-      margin: 0;
-      padding: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Interests</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    header, nav, footer {
-      background: #1f2937;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
+      body {
+        font-family: "Georgia", serif;
+        background: ffff;
+        min-height: 100vh;
+        position: relative;
+      }
 
-    nav a {
-      color: #fcd34d;
-      text-decoration: none;
-      font-weight: bold;
-    }
+      /* Animated background pattern */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+            circle at 25% 25%,
+            rgba(255, 255, 255, 0.1) 2px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 75% 75%,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 50px 50px;
+        animation: float 20s ease-in-out infinite;
+        z-index: -1;
+      }
 
-    main {
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
 
-    .interest-box {
-      background: white;
-      border-left: 6px solid #2563eb;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease;
-    }
+      header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        color: #2d3748;
+        text-align: center;
+        padding: 2rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
 
-    .interest-box:hover {
-      transform: translateY(-5px);
-    }
+      header h1 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        position: relative;
+        display: inline-block;
+      }
 
-    .interest-box h2 {
-      margin-top: 0;
-      color: #1e3a8a;
-      font-size: 1.3rem;
-    }
+      nav {
+        background: rgba(45, 55, 72, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-    .interest-box p {
-      color: #374151;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
 
-    footer p {
-      margin: 0;
-    }
-  </style>
-</head>
-<body>
-  <header><h1>My Interests: Beyond Coding</h1></header>
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
-  <main>
-    <div class="interest-box">
-      <h2>🎶 Music & Arts</h2>
-      <p>I find rhythm and expression in music and visual art. Whether it's tuning into soulful melodies or sketching ideas, the arts are my emotional escape and creative pulse.</p>
-    </div>
-    <div class="interest-box">
-      <h2>📝 Article & Grant Writing</h2>
-      <p>Words are powerful. I enjoy crafting thoughtful articles and persuasive grant proposals that tell stories, influence change, and secure impact-driven support.</p>
-    </div>
-    <div class="interest-box">
-      <h2>🎮 Gaming</h2>
-      <p>Gaming fuels my curiosity and sharpens my problem-solving skills. It’s more than fun — it's a digital adventure that keeps my mind active and strategic.</p>
-    </div>
-    <div class="interest-box">
-      <h2>💡 Mental Health Advocacy</h2>
-      <p>Through tech-driven solutions like Elevate Minds Network System, I champion mental wellness. I believe tech should be a tool for healing, connection, and hope.</p>
-    </div>
-    <div class="interest-box">
-      <h2>👨‍💻 Software & System Design</h2>
-      <p> I'm passionate about creating meaningful software solutions that solve real-life problems, blending technology with empathy, purpose, and everyday impact.</p>
-    </div>
-    <div class="interest-box">
-      <h2>💬 Communication & Customer Relations</h2>
-      <p>Having served at KCB and Kabarak, I’ve grown to love meaningful interactions, teamwork, and service. I value people and the bonds we create through empathy.</p>
-    </div>
-    <div class="interest-box">
-      <h2>🤝 Volunteering & Peer Support</h2>
-      <p>I serve as a peer counselor because I care. Uplifting others, listening deeply, and showing up for community is at the heart of who I am.</p>
-    </div>
-    <div class="interest-box">
-      <h2>📚 Lifelong Learning</h2>
-      <p>Learning excites me. I embrace personal growth through challenges, new knowledge, and programs like the Power Learn Project — always growing, always curious.</p>
-    </div>
-  </main>
-  <footer><p>&copy; 2025 @ScarpeliansDevs</p></footer>
-</body>
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: #fcd34d;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-links a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(252, 211, 77, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .nav-links a:hover::before {
+        left: 100%;
+      }
+
+      .nav-links a:hover {
+        background: rgba(252, 211, 77, 0.1);
+        transform: translateY(-2px);
+      }
+
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .interest-box {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .interest-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
+        background-size: 200% 100%;
+        animation: gradient-shift 3s ease infinite;
+      }
+
+      @keyframes gradient-shift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .interest-box:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      }
+
+      .interest-box h2 {
+        margin-bottom: 1rem;
+        color: #2d3748;
+        font-size: 1.4rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .interest-box h2 .emoji {
+        font-size: 1.8rem;
+        display: inline-block;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .interest-box:nth-child(even) h2 .emoji {
+        animation-delay: 0.5s;
+      }
+
+      .interest-box p {
+        color: #4a5568;
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: justify;
+        position: relative;
+      }
+
+      /* Unique styling for each interest box */
+      .interest-box:nth-child(1) {
+        --accent: #667eea;
+      }
+      .interest-box:nth-child(2) {
+        --accent: #764ba2;
+      }
+      .interest-box:nth-child(3) {
+        --accent: #f093fb;
+      }
+      .interest-box:nth-child(4) {
+        --accent: #f5576c;
+      }
+      .interest-box:nth-child(5) {
+        --accent: #4facfe;
+      }
+      .interest-box:nth-child(6) {
+        --accent: #43e97b;
+      }
+      .interest-box:nth-child(7) {
+        --accent: #fa709a;
+      }
+      .interest-box:nth-child(8) {
+        --accent: #fee140;
+      }
+
+      .interest-box::after {
+        content: "";
+        position: absolute;
+        bottom: -50%;
+        right: -50%;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(
+          circle,
+          var(--accent, #667eea) 0%,
+          transparent 70%
+        );
+        opacity: 0.1;
+        transition: all 0.4s ease;
+      }
+
+      .interest-box:hover::after {
+        bottom: -30%;
+        right: -30%;
+        opacity: 0.2;
+      }
+
+      footer {
+        background: rgba(45, 55, 72, 0.95);
+        backdrop-filter: blur(20px);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      footer p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      /* Mobile menu styles */
+      .mobile-menu-checkbox {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+      }
+
+      .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #fcd34d;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        .mobile-menu-toggle {
+          display: flex;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          gap: 1rem;
+          margin-top: 1rem;
+        }
+
+        .mobile-menu-checkbox:checked ~ .nav-links {
+          display: flex;
+        }
+
+        .mobile-menu-checkbox:checked ~ .mobile-menu-toggle span:nth-child(1) {
+          transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-checkbox:checked ~ .mobile-menu-toggle span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .mobile-menu-checkbox:checked ~ .mobile-menu-toggle span:nth-child(3) {
+          transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        main {
+          grid-template-columns: 1fr;
+          padding: 2rem 1rem;
+        }
+
+        .interest-box {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header {
+          padding: 1.5rem 1rem;
+        }
+
+        header h1 {
+          font-size: 1.8rem;
+          letter-spacing: 1px;
+        }
+
+        .interest-box h2 {
+          font-size: 1.2rem;
+        }
+
+        .interest-box p {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>My Interests: Beyond Coding</h1></header>
+    <nav>
+      <div class="nav-container">
+        <input type="checkbox" id="mobile-menu" class="mobile-menu-checkbox" />
+        <label for="mobile-menu" class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="skills.html">Programming languages</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="interests.html">interests</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="interest-box">
+        <h2>🎶 Music & Arts</h2>
+        <p>
+          I find rhythm and expression in music and visual art. Whether it's
+          tuning into soulful melodies or sketching ideas, the arts are my
+          emotional escape and creative pulse.
+        </p>
+      </div>
+      <div class="interest-box">
+        <h2>📝 Article & Grant Writing</h2>
+        <p>
+          Words are powerful. I enjoy crafting thoughtful articles and
+          persuasive grant proposals that tell stories, influence change, and
+          secure impact-driven support.
+        </p>
+      </div>
+      <div class="interest-box">
+        <h2>🎮 Gaming</h2>
+        <p>
+          Gaming fuels my curiosity and sharpens my problem-solving skills. It’s
+          more than fun — it's a digital adventure that keeps my mind active and
+          strategic.
+        </p>
+      </div>
+      <div class="interest-box">
+        <h2>💡 Mental Health Advocacy</h2>
+        <p>
+          Through tech-driven solutions like Elevate Minds Network System, I
+          champion mental wellness. I believe tech should be a tool for healing,
+          connection, and hope.
+        </p>
+      </div>
+      <div class="interest-box">
+        <h2>👨‍💻 Software & System Design</h2>
+        <p>
+          I'm passionate about creating meaningful software solutions that solve
+          real-life problems, blending technology with empathy, purpose, and
+          everyday impact.
+        </p>
+      </div>
+      <div class="interest-box">
+        <h2>💬 Communication & Customer Relations</h2>
+        <p>
+          Having served at KCB and Kabarak, I’ve grown to love meaningful
+          interactions, teamwork, and service. I value people and the bonds we
+          create through empathy.
+        </p>
+      </div>
+      <div class="interest-box">
+        <h2>🤝 Volunteering & Peer Support</h2>
+        <p>
+          I serve as a peer counselor because I care. Uplifting others,
+          listening deeply, and showing up for community is at the heart of who
+          I am.
+        </p>
+      </div>
+      <div class="interest-box">
+        <h2>📚 Lifelong Learning</h2>
+        <p>
+          Learning excites me. I embrace personal growth through challenges, new
+          knowledge, and programs like the Power Learn Project — always growing,
+          always curious.
+        </p>
+      </div>
+    </main>
+    <footer><p>&copy; 2025 @ScarpeliansDevs</p></footer>
+  </body>
 </html>
